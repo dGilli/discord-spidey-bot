@@ -1,6 +1,11 @@
 require("socket")
+local driver = require "luasql.postgres"
 local https = require("ssl.https")
 local ltn12 = require("ltn12")
+
+--env = assert (driver.postgres())
+--con = assert (env:connect("luasql-test"))
+
 local res, code, headers, status = https.request {
     url = string.format("%s/%s/%s",
         "https://discord.com/api/webhooks",
@@ -14,5 +19,6 @@ local res, code, headers, status = https.request {
     source = ltn12.source.string('{"content": "Foobar is my name!"}'),
     sink = ltn12.sink.table({})
 }
+
 print(status)
 

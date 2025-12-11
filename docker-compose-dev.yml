@@ -1,0 +1,15 @@
+services:
+
+services:
+  web:
+    build: ./webapp
+    image: nginx:latest
+    ports:
+      - "8080:80"
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_DB: exampledb
+
