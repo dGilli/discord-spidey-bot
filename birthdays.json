@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Example",
+        "birthday": "1971-12-12"
+    },
+    {
+        "name": "Foobar Baz",
+        "birthday": "1991-09-17"
+    },
+]
